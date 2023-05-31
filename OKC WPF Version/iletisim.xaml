@@ -1,0 +1,51 @@
+﻿<Window x:Class="OKC_WPF_Version.iletisim"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OKC_WPF_Version"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded" Title="Anamenul" Height="450" Width="700" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="GeciciResimler/OKCIcon.ico" >
+    <Grid x:Name="AnaGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="GeciciResimler/menu.png"/>
+        </Grid.Background>
+        <Grid x:Name="CekBirakGrid" Width="549" Height="35" Background="Transparent" HorizontalAlignment="Right" MouseLeftButtonDown="CekBirakGrid_MouseLeftButtonDown" VerticalAlignment="Top">
+
+        </Grid>
+        <Grid Width="150" HorizontalAlignment="Left" x:Name="YanGrid" Background="Transparent">
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid2" Background="Transparent" Margin="0,6,0,0">
+                <Label Name="YanGrid2Label1" Content="Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="25" Foreground="White" RenderTransformOrigin="0.677,0.625"  />
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid3" Margin="0,75,0,0" >
+                <Border x:Name="Border1">
+                    <Label x:Name="YanGrid3Label1" Content="Ana Sayfa" HorizontalAlignment="Center" Cursor="Hand" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" MouseLeftButtonUp="YanGrid3Label1_MouseLeftButtonUp" Foreground="White" MouseEnter="YanGrid3Label1_MouseEnter" MouseLeave="YanGrid3Label1_MouseLeave" />
+                </Border>
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid4" Margin="0,150,0,0" >
+                <Border x:Name="Border2">
+                    <Label x:Name="YanGrid4Label1" Cursor="Hand" Content="Pay Detayı" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" Foreground="White"  MouseLeftButtonUp="YanGrid4Label1_MouseLeftButtonUp" MouseEnter="YanGrid4Label1_MouseEnter" MouseLeave="YanGrid4Label1_MouseLeave" />
+                </Border>
+            </Grid>
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid5" Margin="0,225,0,0" Background="Transparent">
+                <Border x:Name="Border3">
+                    <Label x:Name="YanGrid5Label1" Content="İletişim" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" Foreground="Black"/>
+                </Border>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="Grid6" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="416.6" Width="550" >
+            <Grid.Background>
+                <ImageBrush ImageSource="GeciciResimler/catbackpaper.jpg"/>
+            </Grid.Background>
+            <Image MouseLeftButtonUp="FaceB_MouseLeftButtonUp" Cursor="Hand" x:Name="FaceB" HorizontalAlignment="Left" VerticalAlignment="Top" Source="GeciciResimler/Face.png" Width="100" Height="100" Margin="47,10,0,0" MouseEnter="FaceB_MouseEnter" MouseLeave="FaceB_MouseLeave" />
+            <Image MouseLeftButtonUp="Outl_MouseLeftButtonUp" Cursor="Hand" x:Name="Outl" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="100" Source="GeciciResimler/Outl.png" Margin="233,139,226,0" MouseLeave="Outl_MouseLeave" MouseEnter="Outl_MouseEnter" />
+            <Image MouseLeftButtonUp="Websi_MouseLeftButtonUp" Cursor="Hand" x:Name="Websi" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="100" Source="GeciciResimler/Websi.png" Margin="0,0,64,0" MouseEnter="Websi_MouseEnter" MouseLeave="Websi_MouseLeave" />
+            <Image MouseLeftButtonUp="Googl_MouseLeftButtonUp" Cursor="Hand" x:Name="Googl" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" Source="GeciciResimler/Googl.png" Margin="64,323,0,28.536" MouseEnter="Googl_MouseEnter" MouseLeave="Googl_MouseLeave" />
+            <Image MouseLeftButtonUp="Telep_MouseLeftButtonUp" Cursor="Hand" x:Name="Telep" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="100" Source="GeciciResimler/Telep.png" Margin="0,323,64,28.536" MouseEnter="Telep_MouseEnter" MouseLeave="Telep_MouseLeave" />
+
+        </Grid>
+    </Grid>
+</Window>

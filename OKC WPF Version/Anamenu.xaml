@@ -1,0 +1,99 @@
+﻿<Window x:Class="OKC_WPF_Version.Anamenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OKC_WPF_Version"
+        mc:Ignorable="d"
+       Title="Anamenu" Loaded="Window_Loaded" Height="450" Width="700" WindowStyle="SingleBorderWindow" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" Icon="GeciciResimler/OKCIcon.ico" StateChanged="Window_StateChanged" Closing="Window_Closing" >
+    <Grid x:Name="AnaGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="GeciciResimler/menu.png"/>
+        </Grid.Background>
+        <Grid x:Name="CekBirakGrid" Width="549" Height="35" Background="Transparent" HorizontalAlignment="Right" MouseLeftButtonDown="CekBirakGrid_MouseLeftButtonDown" VerticalAlignment="Top">
+
+        </Grid>
+        <Grid Width="150" HorizontalAlignment="Left" x:Name="YanGrid" Background="Transparent">
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid2" Background="Transparent" Margin="0,6,0,0">
+                <Label Name="YanGrid2Label1" Content="Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="25" Foreground="White" RenderTransformOrigin="0.677,0.625"  />
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid3" Margin="0,75,0,0" OpacityMask="#FF22E022" Background="Transparent">
+                <Border x:Name="Border1">
+                    <Label x:Name="YanGrid3Label1" Content="Ana Sayfa" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" MouseLeftButtonUp="YanGrid3Label1_MouseLeftButtonUp" Foreground="Black" />
+                </Border>
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid4" Margin="0,150,0,0">
+                <Border x:Name="Border2">
+                    <Label x:Name="YanGrid4Label1" Content="Pay Detayı" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" Cursor="Hand" MouseLeftButtonUp="YanGrid4Label1_MouseLeftButtonUp" MouseEnter="YanGrid4Label1_MouseEnter" MouseLeave="YanGrid4Label1_MouseLeave" Foreground="White" />
+                </Border>
+            </Grid>
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid5" Margin="0,225,0,0">
+                <Border x:Name="Border3">
+                    <Label x:Name="YanGrid5Label1" Content="İletişim" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" Cursor="Hand" MouseLeftButtonUp="YanGrid5Label1_MouseLeftButtonUp" MouseEnter="YanGrid5Label1_MouseEnter" MouseLeave="YanGrid5Label1_MouseLeave" Foreground="White" />
+                </Border>
+            </Grid>
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid7" Margin="-31,400,0,0">
+                <Image Source="GeciciResimler\Exit.png" Width="15" Height="15" Cursor="Hand" MouseLeftButtonUp="YanGrid6Label1_MouseLeftButtonUp" Margin="72,18,58,17" />
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid6" Margin="0,400,0,0">
+                <Label x:Name="YanGrid6Label1" Content="Çıkış" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold" FontSize="15" Foreground="Red" Cursor="Hand" MouseLeftButtonUp="YanGrid6Label1_MouseLeftButtonUp" Margin="54,11,41,11" />
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="Grid6" VerticalAlignment="Top" HorizontalAlignment="Right" Height="450" Width="550">
+
+            <DataGrid  AutoGenerateColumns="False" ScrollViewer.CanContentScroll="False" RowBackground="White" HorizontalGridLinesBrush="White" VerticalGridLinesBrush="White" BorderThickness="0"  BorderBrush="Transparent" CanUserAddRows="False"  HorizontalAlignment="Left" Height="328" Margin="2,38,0,0" VerticalAlignment="Top" Width="467" CanUserResizeColumns="False" CanUserResizeRows="True" Cursor="Help" FontFamily="Arial Bold" FontSize="18" x:Name="dataGridView1" Background="Transparent" Opacity="1" SelectedIndex="-1" Foreground="#FF142525">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn x:Name="Check1" Header="Seçim" />
+                    <DataGridTextColumn Foreground="Black" FontFamily="georgia" FontSize="13" x:Name="Text1" Header="Üye İsimi" Binding="{Binding NickName}" />
+                    <DataGridTextColumn x:Name="Text2" Foreground="Black" FontSize="13" Header="Üye Payı" Binding="{Binding Pay}"/>
+                    <DataGridTemplateColumn x:Name="Link1" Header="Bilgi" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Cursor="Hand" x:Name="LookButton" Background="Transparent" BorderBrush="Orange" BorderThickness="0"  Click="LookButton_Click" >
+                                    <StackPanel Orientation="Horizontal" >
+                                        <!--Image Source="GeciciResimler\PersonLook.png" Width="20" Height="20"/-->
+                                        <TextBlock Text="|Detayı Görüntüle|" FontFamily="Georgia" FontSize="13" Foreground="Black" />
+                                    </StackPanel>
+                                </Button >
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBox MaxLength="25" PreviewKeyDown="KullaniciAdi_PreviewKeyDown"  VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Text="Oyuncu İsmi" Background="Aqua" Opacity="0.8" FontFamily="Georgia" FontSize="15" Width="166" Height="30" Margin="31,371,353,49" Foreground="DarkSlateGray" x:Name="KullaniciAdi" KeyDown="KullaniciAdi_KeyDown" MouseLeave="KullaniciAdi_MouseLeave" MouseEnter="KullaniciAdi_MouseEnter" RenderTransformOrigin="0.519,0.644" />
+            <Button  Click="Button1_Click" x:Name="Button1"  HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Opacity="0.8" Margin="31,413,353,11" Height="26" Width="166" Background="#FF3581BF">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="GeciciResimler\useradd.png" Width="20" Height="20"/>
+                    <TextBlock Text="Ekle" FontFamily="georgia" FontSize="18" Foreground="White"/>
+
+                </StackPanel>
+
+            </Button>
+            <Button Click="Button2_Click" x:Name="Button2" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Background="#FF3581BF" Opacity="0.8" Margin="471,38,2,384" Width="77" Height="28">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="GeciciResimler\DeleteUser.png" Width="20" Height="20"/>
+                    <TextBlock Text="Sil" FontFamily="Georgia" FontSize="18" Foreground="White" />
+
+                </StackPanel>
+            </Button>
+
+            <TextBox PreviewKeyDown="PayText_PreviewKeyDown"  MaxLength="9" KeyDown="PayText_KeyDown" MouseLeave="PayText_MouseLeave" MouseEnter="PayText_MouseEnter" x:Name="PayText" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center" Width="118" Height="30"  Text="Verilecek Pay" FontFamily="Arial" FontSize="15" Foreground="DarkSlateGray" Background="Aqua" Opacity="0.8" Margin="290,371,142,49" />
+            <TextBox PreviewKeyDown="DropText_PreviewKeyDown" KeyDown="DropText_KeyDown" MouseLeave="DropText_MouseLeave" MouseEnter="DropText_MouseEnter" x:Name="DropText" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Width="118" Height="30" Text="Eşya" FontFamily="Arial" FontSize="15" Foreground="DarkSlateGray" Background="Aqua" Opacity="0.8" Margin="413,371,19,49" />
+            <Button Click="Button3_Click" x:Name="Button3" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Background="#FF3581BF" Opacity="0.8" Margin="290,412,19,11" Height="27" Width="241">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="GeciciResimler\AddGoldMoney.png" Width="25" Height="25"/>
+                    <TextBlock Text="Ver" FontFamily="georgia" FontSize="18" Foreground="White" />
+
+                </StackPanel>
+            </Button>
+
+
+        </Grid>
+    </Grid>
+</Window>

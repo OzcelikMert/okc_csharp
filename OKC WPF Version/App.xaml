@@ -1,0 +1,11 @@
+﻿<Application x:Class="OKC_WPF_Version.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OKC_WPF_Version"
+             StartupUri="Anamenu.xaml">
+    <Application.Resources>
+        <ImageSource x:Key="ImageWhite">GeciciResimler/Reset2.png</ImageSource>
+        <ImageSource x:Key="ImageBlack">GeciciResimler/Reset.png</ImageSource>
+    </Application.Resources>
+
+</Application>

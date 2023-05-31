@@ -1,0 +1,81 @@
+﻿<Window x:Class="OKC_WPF_Version.Detay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OKC_WPF_Version"
+        mc:Ignorable="d"
+        Title="Anamenul" Height="450" Width="700" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="GeciciResimler/OKCIcon.ico">
+    <Grid x:Name="AnaGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="GeciciResimler/menu.png"/>
+        </Grid.Background>
+        <Grid x:Name="CekBirakGrid" Width="549" Height="35" Background="Transparent" HorizontalAlignment="Right" MouseLeftButtonDown="CekBirakGrid_MouseLeftButtonDown" VerticalAlignment="Top">
+
+
+        </Grid>
+        <Grid Width="150"  HorizontalAlignment="Left" x:Name="YanGrid" Background="Transparent">
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid2" Background="Transparent" Margin="0,6,0,0">
+                <Label Name="YanGrid2Label1" Content="Menu" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="25" Foreground="White" RenderTransformOrigin="0.677,0.625"  />
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid3" Margin="0,75,0,0" >
+                <Border x:Name="Border1">
+                    <Label x:Name="YanGrid3Label1" Content="Ana Sayfa" HorizontalAlignment="Center" Cursor="Hand" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" MouseLeftButtonUp="YanGrid3Label1_MouseLeftButtonUp" Foreground="White" MouseEnter="YanGrid3Label1_MouseEnter" MouseLeave="YanGrid3Label1_MouseLeave" />
+                </Border>
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid4" Margin="0,150,0,0" Background="Transparent">
+                <Border x:Name="Border2">
+                    <Label x:Name="YanGrid4Label1" Content="Pay Detayı" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" MouseLeftButtonUp="YanGrid4Label1_MouseLeftButtonUp" Foreground="Black" />
+                </Border>
+            </Grid>
+
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid5" Margin="0,225,0,0">
+                <Border x:Name="Border3">
+                    <Label x:Name="YanGrid5Label1" Content="İletişim" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="georgia" FontWeight="Bold" FontSize="20" Cursor="Hand" MouseLeftButtonUp="YanGrid5Label1_MouseLeftButtonUp" MouseEnter="YanGrid5Label1_MouseEnter" MouseLeave="YanGrid5Label1_MouseLeave" Foreground="White" />
+                </Border>
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid6" Margin="0,300,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Cursor="Hand" MouseEnter="ResetText_MouseEnter" MouseLeave="ResetText_MouseLeave" MouseLeftButtonUp="ResetText_MouseLeftButtonUp" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="ResetImage" FlowDirection="LeftToRight" Source="GeciciResimler/Reset2.png" />
+                    <TextBlock Cursor="Hand" MouseEnter="ResetText_MouseEnter" MouseLeave="ResetText_MouseLeave" MouseLeftButtonUp="ResetText_MouseLeftButtonUp" Margin="10,0,0,0" x:Name="ResetText" Text="Reset" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="georgia Bold" FontSize="20" Foreground="White" />
+                </StackPanel>
+            </Grid>
+            <Grid  Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YanGrid7" Margin="0,375,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image MouseEnter="YedekText_MouseEnter" MouseLeave="YedekText_MouseLeave" Cursor="Hand"  Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="YedekImage" FlowDirection="LeftToRight" Source="GeciciResimler/Database.png" MouseLeftButtonUp="YedekText_MouseLeftButtonUp" />
+                    <TextBlock MouseEnter="YedekText_MouseEnter" MouseLeave="YedekText_MouseLeave" MouseLeftButtonUp="YedekText_MouseLeftButtonUp" Cursor="Hand"  Margin="10,0,0,0" x:Name="YedekText" Text="Yedekle" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="georgia Bold" FontSize="20" Foreground="FloralWhite" />
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="Grid6" VerticalAlignment="Top" HorizontalAlignment="Right" Height="414" Width="559" Margin="0,38,0,0">
+
+            <DataGrid AlternatingRowBackground="#f2f2f2" ColumnHeaderHeight="30" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="False" RowBackground="White" HorizontalGridLinesBrush="White" VerticalGridLinesBrush="White" BorderThickness="0"  BorderBrush="Transparent" CanUserAddRows="False"  HorizontalAlignment="Left" Height="306" Margin="9,-3,0,0" VerticalAlignment="Top" Width="392" CanUserResizeColumns="False" CanUserResizeRows="True" Cursor="Help" FontFamily="Arial Bold" FontSize="18" x:Name="dataGridView1" Background="White" Opacity="1" SelectedIndex="-1" Foreground="#FF142525">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="Text1" Header="Tarih" Foreground="Black" Binding="{Binding Tarih}" />
+                    <DataGridTextColumn x:Name="Text2" Header="Miktar" Foreground="Black" Binding="{Binding Miktar}"/>
+                    <DataGridTemplateColumn x:Name="Link1" Header="Genel Detay">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="LookButton" Click="LookButton_Click" Background="White" Cursor="Hand" BorderThickness="0" >
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Image Source="GeciciResimler\Detayli.png" Width="20" Height="20"/>
+                                        <TextBlock Text="Göster" FontFamily="Arial Bold" FontSize="18" Foreground="Black" />
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Label  Foreground="Aqua" x:Name="PayLabel" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="Toplam Paylar" Margin="202,303,203,77" FontSize="21" FontFamily="Arial Bold" />
+            <Image Cursor="Hand" Opacity="0.9" x:Name="CoinsImage" HorizontalAlignment="Center" VerticalAlignment="Center" Source="GeciciResimler\CONCON.png" Width="50" Height="50" Margin="182,336,327,16" MouseLeftButtonUp="CoinsImage_MouseLeftButtonUp" MouseEnter="CoinsImage_MouseEnter" MouseLeave="CoinsImage_MouseLeave" />
+            <Label  Foreground="Aqua" x:Name="CoinsLabel" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="Coins" Margin="90,344,396,24" FontSize="21" FontFamily="Arial Bold" />
+            <Image Cursor="Hand"  Opacity="0.9"  x:Name="BarImage" HorizontalAlignment="Center" VerticalAlignment="Center" Source="GeciciResimler\goldbar.png" Width="69" Height="40" Margin="311,336,179,26" MouseLeftButtonUp="BarImage_MouseLeftButtonUp" MouseEnter="BarImage_MouseEnter" MouseLeave="BarImage_MouseLeave" />
+            <Label FlowDirection="LeftToRight"  Foreground="Yellow" x:Name="BarLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Bar"  Margin="255,344,0,0" FontSize="18" FontFamily="Arial Bold"  />
+
+        </Grid>
+    </Grid>
+</Window>
